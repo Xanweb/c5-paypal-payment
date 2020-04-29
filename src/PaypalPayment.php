@@ -1,11 +1,11 @@
 <?php
 namespace Xanweb\Paypal;
 
-use Exception;
-use Concrete\Core\Http\Request;
 use Concrete\Core\Error\ErrorList\ErrorList;
-use PayPal\Auth\OAuthTokenCredential;
+use Concrete\Core\Http\Request;
+use Exception;
 use PayPal\Api as PayPalApi;
+use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Rest\ApiContext;
 
 class PaypalPayment
@@ -61,8 +61,6 @@ class PaypalPayment
      * @default 'paypal'
      *
      * @param string $paymentMethod
-     *
-     * @return PaypalPayment
      */
     public function setPaymentMethod($paymentMethod): PaypalPayment
     {
@@ -132,8 +130,6 @@ class PaypalPayment
 
     /**
      * @param string $invoiceNumber
-     *
-     * @return PaypalPayment
      */
     public function setInvoiceNumber($invoiceNumber): PaypalPayment
     {
@@ -146,8 +142,6 @@ class PaypalPayment
      * @required
      *
      * @param float $total
-     *
-     * @return PaypalPayment
      */
     public function setTotal($total): PaypalPayment
     {
@@ -158,8 +152,6 @@ class PaypalPayment
 
     /**
      * @param float $tax
-     *
-     * @return PaypalPayment
      */
     public function setTax($tax): PaypalPayment
     {
@@ -170,8 +162,6 @@ class PaypalPayment
 
     /**
      * @param string $paymentDescription
-     *
-     * @return PaypalPayment
      */
     public function setPaymentDescription($paymentDescription): PaypalPayment
     {
@@ -182,8 +172,6 @@ class PaypalPayment
 
     /**
      * @param string $urlOK
-     *
-     * @return PaypalPayment
      */
     public function setSuccessURL($urlOK): PaypalPayment
     {
@@ -194,8 +182,6 @@ class PaypalPayment
 
     /**
      * @param string $urlFail
-     *
-     * @return PaypalPayment
      */
     public function setFailUrl($urlFail): PaypalPayment
     {
@@ -206,10 +192,6 @@ class PaypalPayment
 
     /**
      * Structure of Item array of ('name'=> $prodName, 'quantity' => $qty, 'price' => $dblNumber).
-     *
-     * @param array $itemValues
-     *
-     * @return PaypalPayment
      */
     public function setItemList(array $itemValues): PaypalPayment
     {
@@ -229,9 +211,6 @@ class PaypalPayment
 
     /**
      * Structure of Item array of ('name'=> $prodName, 'quantity' => $qty, 'price' => $dblNumber).
-     *
-     * @param array $itemValue
-     * @return PaypalPayment
      */
     public function addItem(array $itemValue): PaypalPayment
     {
@@ -247,8 +226,6 @@ class PaypalPayment
 
     /**
      * @param float $shipping
-     *
-     * @return PaypalPayment
      */
     public function setShipping($shipping): PaypalPayment
     {
@@ -261,8 +238,6 @@ class PaypalPayment
      * @requried
      *
      * @param float $subtotal
-     *
-     * @return PaypalPayment
      */
     public function setSubtotal($subtotal): PaypalPayment
     {
@@ -275,8 +250,6 @@ class PaypalPayment
      * @default 'EUR'
      *
      * @param string $currency 'EUR', 'USD' ...
-     *
-     * @return PaypalPayment
      */
     public function setCurrency($currency): PaypalPayment
     {
