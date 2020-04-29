@@ -1,0 +1,19 @@
+{
+    "name": "xanweb/c5-paypal-payment",
+    "description": "Concrete5 Paypal Payment Interface",
+    "keywords": ["concrete5", "concrete5-v8", "concrete5-library"],
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.2",
+        "paypal/rest-api-sdk-php": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xanweb\\Paypal\\": "src/"
+        }
+    },
+    "support": {
+        "source": "https://github.com/Xanweb/c5-paypal-payment"
+    }
+}
