@@ -328,8 +328,8 @@ class PaypalPayment
         }
 
         $request = Request::getInstance();
-        $paymentId = $request->get('paymentId');
-        $payerID = $request->get('PayerID');
+        $paymentId = $request->query->get('paymentId');
+        $payerID = $request->query->get('PayerID');
         if (!$paymentId || !$payerID) {
             $this->error->add(t('Invalid Payment Request'));
 
@@ -342,11 +342,8 @@ class PaypalPayment
 
         try {
             return $payment->execute($execute, $apiContext);
-        } catch (Exception $exc) {
-            $data = json_decode($exc->getData(), false);
-            $this->error->add(new Exception(t($data->message) . ' (' . $data->name . ') ', $exc->getCode()));
-
-            return $this->error;
+        } catch (Exception $ex) {
+            return $this->error->add($ex);
         }
     }
 
